@@ -1,7 +1,7 @@
 import React from "react";
 
 import { getFeaturedEvents } from "../dummy-data";
-import EventList from "../components/events/eventList";
+import EventList from "../components/events/EventList";
 
 const HomePage = () => {
   const featuredEvents = getFeaturedEvents();

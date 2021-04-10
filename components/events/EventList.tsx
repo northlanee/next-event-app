@@ -9,6 +9,8 @@ interface EventListProps {
 }
 
 const EventList: React.FC<EventListProps> = ({ items }) => {
+  if (items.length === 0) return <p className="center">No events</p>;
+
   const renderEvents = () =>
     items.map((event) => <EventItem key={event.id} item={event} />);
 

@@ -1,6 +1,7 @@
 import React from "react";
-import Link from "next/link";
 
+import { Button } from "../ui";
+import { DateIcon, AddressIcon, ArrowRightIcon } from "../icons";
 import { DummyEvent } from "../../dummy-data";
 import styles from "./EventItem.module.css";
 
@@ -26,15 +27,22 @@ const EventItem: React.FC<EventListProps> = ({ item }) => {
         <div className={styles.summary}>
           <h2>{title}</h2>
           <div className={styles.date}>
+            <DateIcon />
             <time>{convertedDate}</time>
           </div>
           <div className={styles.address}>
+            <AddressIcon />
             <address>{convertedAddress}</address>
           </div>
         </div>
 
         <div className={styles.actions}>
-          <Link href={`/events/${id}`}>Explore event</Link>
+          <Button link={`/events/${id}`}>
+            <span>Explore event</span>
+            <span className={styles.icon}>
+              <ArrowRightIcon />
+            </span>
+          </Button>
         </div>
       </div>
     </li>
